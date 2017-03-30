@@ -37,7 +37,9 @@ class MenuController
         read_csv
         main_menu
       when 5
-        load_menu_option("view_specific_entry")
+        system "clear"
+        view_specific_entry
+        main_menu
       when 6
         puts "Good-bye!"
         exit(0)
@@ -46,12 +48,6 @@ class MenuController
         puts "Sorry, that is not a valid input"
         main_menu
     end
-  end
-
-  def load_menu_option(menu_option)
-    system "clear"
-    eval menu_option
-    main_menu
   end
 
   def view_all_entries
