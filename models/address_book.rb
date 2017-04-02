@@ -11,7 +11,7 @@ class AddressBook
 
   def add_entry(name, phone_number, email)
     index = 0
-    entries.each do |entry|
+    @entries.each do |entry|
       if name < entry.name
         break
       end
@@ -52,6 +52,15 @@ class AddressBook
     end
 
     # #5
+    return nil
+  end
+
+  def iterative_search(name)
+    @entries.each do |entry|
+      if entry.name == name
+        return entry
+      end
+    end
     return nil
   end
 
