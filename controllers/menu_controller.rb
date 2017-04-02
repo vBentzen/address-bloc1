@@ -14,6 +14,7 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - Exit"
+    puts "666 - DESTROYEMALL"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -38,6 +39,11 @@ class MenuController
       when 5
         puts "Good-bye!"
         exit(0)
+      when 666
+        system "clear"
+        destroy_all
+        puts "EVERY ENTRY HAVE BEEN DESTROYED!!!"
+        main_menu
       else
         system "clear"
         puts "Sorry, that is not a valid input"
@@ -54,6 +60,10 @@ class MenuController
 
     system "clear"
     puts "End of entries"
+  end
+
+  def destroy_all
+    @address_book = []
   end
 
   def create_entry
